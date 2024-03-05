@@ -8,9 +8,7 @@ public class StudentAllocator {
         for(int i = 0; i < 5;i++){
             String nume = "Student" + i;
             double grade = 5 + (i * 0.2);
-            Student student = new Student();
-            student.setName(nume);
-            student.setGrade(grade);
+            Student student = new Student("Student" + i, grade);
             checkStudents[i] = student;
         }
         return checkStudents;
