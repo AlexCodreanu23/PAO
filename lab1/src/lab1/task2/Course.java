@@ -6,6 +6,11 @@ public class Course {
     private double minimumGrade;
     private Student[] students;
 
+    public Course(String name, double minimumGrade, Student[] students) {
+        this.name = name;
+        this.minimumGrade = minimumGrade;
+        this.students = students;
+    }
     public String getName(){
         return name;
     }
