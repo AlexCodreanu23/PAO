@@ -1,0 +1,16 @@
+Sequential - Size 10: 6ms
+Using Thread - Size 10: 1ms
+Using parallelStream - Size 10: 3ms
+Using CompletableFuture - Size 10: 2ms
+Sequential - Size 1000: 9ms
+Using Thread - Size 1000: 6ms
+Using parallelStream - Size 1000: 8ms
+Using CompletableFuture - Size 1000: 7ms
+Sequential - Size 10000: 28ms
+Using Thread - Size 10000: 35ms
+Using parallelStream - Size 10000: 30ms
+Using CompletableFuture - Size 10000: 45ms
+Sequential - Size 10000000: 14962ms
+Using Thread - Size 10000000: 21248ms
+Using parallelStream - Size 10000000: 21884ms
+Using CompletableFuture - Size 10000000: 25467ms
