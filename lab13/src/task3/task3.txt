@@ -1,0 +1,37 @@
+class F {
+    public int a = 0;
+}
+
+public class T3 {
+    public static void main(String[] args) {
+        F f = new F();
+        bar(f);
+        System.out.println(f.a);
+        System.out.println(foo());
+    }
+
+    private static void bar(F f) {
+        try {
+            f.a = 1;
+        } finally {
+            f.a = 2;
+        }
+    }
+
+    private static int foo() {
+        try {
+           return 0;
+        } finally {
+           return 3;
+        }
+    }
+}
+
+
+OUTPUT:
+2
+3
+
+EXPLICATIE:
+Metoda bar seteaza f.a = 2, intrucat avem finally si nu mai conteaza ce se intampla in blocul try.
+Metoda foo returneaza 3, finnaly inlocuind metoda returnata de blocul try.

@@ -1,0 +1,44 @@
+class C {
+    public C() {
+        System.out.println("C");
+    }
+
+    public C(int x) {
+        System.out.println("C " + x);
+    }
+}
+
+class D extends C {
+    public D() {
+        super(1);
+        System.out.println("D");
+    }
+
+    public D(int x) {
+        System.out.println("D " + x);
+    }
+}
+
+class E extends D {
+    public E() {
+        super(1);
+        System.out.println("E");
+    }
+}
+
+public class T2 {
+    public static void main(String[] args) {
+        new E();
+    }
+}
+
+OUTPUT:
+C
+D 1
+E
+
+EXPLICATIE:
+Constructorul E apeleaza constructorul cu parametru din clasa D prin super(1). In clasa D constructorul cu un parametru nu
+apeleaza explicit un constructor din clasa C, dar se apeleaza constructorul fara parametru datorita mostenirii.
+Acesta afiseaza C, apoi continua executia cu constructorul cu parametru din D ce afiseaza D 1, revenind astfel in clasa E
+unde se afiseaza in final E

@@ -1,0 +1,28 @@
+class A {
+    public static int a = 0;
+}
+
+class B extends A {
+    public static int a = 5;
+}
+
+public class T1 {
+    public static void main(String[] args) {
+        A a = new B();
+        a.a++;
+        System.out.println(A.a);
+        System.out.println(B.a);
+    }
+}
+
+
+Output:
+1
+5
+
+Explicatie:
+
+A a = new B(); creeaza un obiect de tip B, dar referinta este de tip A.
+a.a++ incrementează variabila statică a din clasa A, deoarece tipul referinței este A.
+Astfel se va afisa 1.
+System.out.println(B.a); afiseaza 5 deoarece clasa B defineste propria variabila statica care ascunde variabila statica a din clasa A.
